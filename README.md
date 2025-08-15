@@ -1,8 +1,13 @@
+<div align="center">
+  <img src="https://images.waer.ltd/notes/202508151240669.jpg" alt="Apex Blog Logo" width="120" height="120" style="border-radius: 50%;">
+
 # 🚀 Apex Blog
 
 一个现代化的全栈博客系统，基于 Spring Boot + Vue.js 构建，支持文章管理、用户认证、邮箱订阅等功能。
 
 > 🌐 **线上案例**: [https://www.ilikexff.cn/](https://www.ilikexff.cn/) - 基于本项目部署的实际博客，可参考功能效果
+
+</div>
 
 ## ✨ 特性
 
