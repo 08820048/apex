@@ -20,17 +20,20 @@
 ### 提交代码
 
 1. **Fork 仓库**
+
    ```bash
    # 点击 GitHub 页面右上角的 Fork 按钮
    ```
 
 2. **克隆您的 Fork**
+
    ```bash
    git clone git@github.com:YOUR_USERNAME/apex.git
    cd apex
    ```
 
 3. **创建特性分支**
+
    ```bash
    git checkout -b feature/your-feature-name
    # 或者修复bug
@@ -38,11 +41,13 @@
    ```
 
 4. **进行开发**
+
    - 遵循现有的代码风格
    - 添加必要的测试
    - 确保所有测试通过
 
 5. **提交更改**
+
    ```bash
    git add .
    git commit -m "feat: add your feature description"
@@ -51,6 +56,7 @@
    ```
 
 6. **推送到您的 Fork**
+
    ```bash
    git push origin feature/your-feature-name
    ```
@@ -73,8 +79,9 @@
 ```
 
 ### Type 类型
+
 - `feat`: 新功能
-- `fix`: 修复bug
+- `fix`: 修复 bug
 - `docs`: 文档更新
 - `style`: 代码格式调整
 - `refactor`: 代码重构
@@ -82,6 +89,7 @@
 - `chore`: 构建过程或辅助工具的变动
 
 ### 示例
+
 ```
 feat(auth): add JWT token refresh functionality
 
@@ -97,25 +105,28 @@ Closes #123
 在提交代码前，请确保：
 
 1. **后端测试**
+
    ```bash
    cd apex_blog_backend-main
    ./gradlew test
    ```
 
 2. **前端测试**
+
    ```bash
    cd apex_ft-main
    npm run test
-   
+
    cd ../apex_admin-main
    npm run test
    ```
 
 3. **代码格式检查**
+
    ```bash
    # 后端
    ./gradlew checkstyleMain
-   
+
    # 前端
    npm run lint
    ```
@@ -123,12 +134,14 @@ Closes #123
 ## 🎨 代码风格
 
 ### Java (后端)
+
 - 使用 4 个空格缩进
 - 遵循 Google Java Style Guide
 - 使用有意义的变量和方法名
 - 添加适当的注释和文档
 
 ### JavaScript/Vue (前端)
+
 - 使用 2 个空格缩进
 - 遵循 ESLint 配置
 - 使用 Prettier 格式化代码
@@ -146,31 +159,34 @@ Closes #123
 ## 📋 开发环境设置
 
 1. **安装依赖**
+
    - Java 17+
    - Node.js 16+
    - MySQL 8.0+
 
 2. **配置开发环境**
+
    ```bash
    # 后端
    cd apex_blog_backend-main
    cp .env.example .env
    # 编辑 .env 文件
-   
+
    # 前端
    cd apex_ft-main
    cp .env.development.example .env.development
-   
+
    # 管理后台
    cd apex_admin-main
    cp .env.example .env.production
    ```
 
 3. **启动开发服务器**
+
    ```bash
    # 后端
    ./gradlew bootRun
-   
+
    # 前端
    npm run dev
    ```
@@ -188,7 +204,7 @@ Closes #123
 
 1. 查看现有的 [Issues](https://github.com/08820048/apex/issues)
 2. 在 [Discussions](https://github.com/08820048/apex/discussions) 中提问
-3. 发送邮件至: admin@example.com
+3. 发送邮件至: ilikexff@gmail.com
 
 ## 🙏 感谢
 

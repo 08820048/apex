@@ -117,4 +117,4 @@
 
 1. 查看 [Issues](https://github.com/08820048/apex/issues)
 2. 创建新的 Issue
-3. 发送邮件至: admin@example.com
+3. 发送邮件至: ilikexff@gmail.com
