@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>取消订阅 - <span th:text="${blogTitle}">八尺妖剑</span></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 60px 40px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+        
+        .icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+        
+        .success-icon {
+            color: #27ae60;
+        }
+        
+        .error-icon {
+            color: #e74c3c;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .success h1 {
+            color: #27ae60;
+        }
+        
+        .error h1 {
+            color: #e74c3c;
+        }
+        
+        .message {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #666;
+        }
+        
+        .actions {
+            margin-top: 40px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 0 10px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-secondary {
+            background: #95a5a6;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 14px;
+            color: #999;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .btn {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div th:if="${success}" class="success">
+            <div class="icon success-icon">✓</div>
+            <h1>取消订阅成功</h1>
+            <p class="message" th:text="${message}">您已成功取消订阅！</p>
+            <p class="message">我们很遗憾看到您离开，但尊重您的选择。如果将来您想重新订阅，随时欢迎您回来！</p>
+        </div>
+        
+        <div th:if="${!success}" class="error">
+            <div class="icon error-icon">✗</div>
+            <h1>取消订阅失败</h1>
+            <p class="message" th:text="${message}">取消订阅失败</p>
+            <p class="message">请检查链接是否正确，或联系我们获取帮助。</p>
+        </div>
+        
+        <div class="actions">
+            <a th:href="${blogUrl}" class="btn">返回博客首页</a>
+            <a th:if="${!success}" href="javascript:history.back()" class="btn btn-secondary">返回上页</a>
+        </div>
+        
+        <div class="footer">
+            <p>感谢您对 <span th:text="${blogTitle}">八尺妖剑</span> 的关注</p>
+        </div>
+    </div>
+</body>
+</html>

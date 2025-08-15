@@ -1,0 +1,50 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: true
+
+  h2:
+    console:
+      enabled: true
+
+  redis:
+    host: localhost
+    port: 6379
+    password:
+    database: 1
+
+  cache:
+    type: simple
+
+  mail:
+    host: localhost
+    port: 25
+    username: test
+    password: test
+
+jwt:
+  secret: TestJWTSecretKeyForTesting
+  expiration: 86400000
+
+blog:
+  title: "Test Blog"
+  description: "测试博客"
+  author: "test"
+  email: "test@example.com"
+  url: "http://localhost:8888"
+
+logging:
+  level:
+    com.xuyi.blog: DEBUG
+    org.springframework.security: DEBUG
