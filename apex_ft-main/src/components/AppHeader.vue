@@ -1,32 +1,20 @@
 <template>
-  <header
-    class="glass-effect sticky top-0 z-50 border-b border-white/20 bg-white/80"
-  >
+  <header class="glass-effect sticky top-0 z-50 border-b border-white/20 bg-white/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
         <RouterLink to="/" class="group flex items-center space-x-3">
-          <img
-            src="/apex.jpg"
-            alt="ApexBlog Logo"
-            class="w-10 h-10 rounded-full object-cover group-hover:scale-105 transition-transform shadow-md"
-          />
-          <span
-            class="text-xl font-bold text-gray-900 group-hover:scale-105 transition-transform"
-          >
+          <img src="https://images.waer.ltd/notes/202508151240669.jpg" alt="ApexBlog Logo"
+            class="w-10 h-10 rounded-full object-cover group-hover:scale-105 transition-transform shadow-md" />
+          <span class="text-xl font-bold text-gray-900 group-hover:scale-105 transition-transform">
             八尺妖剑
           </span>
         </RouterLink>
 
         <!-- 导航菜单 -->
         <nav class="hidden md:flex items-center space-x-8">
-          <RouterLink
-            v-for="item in navItems"
-            :key="item.path"
-            :to="item.path"
-            class="nav-link"
-            :class="{ 'nav-link-active': $route.path === item.path }"
-          >
+          <RouterLink v-for="item in navItems" :key="item.path" :to="item.path" class="nav-link"
+            :class="{ 'nav-link-active': $route.path === item.path }">
             {{ item.name }}
           </RouterLink>
         </nav>
@@ -34,30 +22,18 @@
         <!-- 搜索框 -->
         <div class="hidden lg:flex items-center space-x-4">
           <div class="relative">
-            <input
-              v-model="searchKeyword"
-              @keyup.enter="handleSearch"
-              type="text"
-              placeholder="搜索文章..."
-              class="w-64 px-4 py-2 pl-10 bg-white/70 backdrop-blur-sm border-2 border-[#a6afbd] rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent focus:bg-white/90 transition-all shadow-sm"
-            />
-            <SearchIcon
-              class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-500"
-            />
+            <input v-model="searchKeyword" @keyup.enter="handleSearch" type="text" placeholder="搜索文章..."
+              class="w-64 px-4 py-2 pl-10 bg-white/70 backdrop-blur-sm border-2 border-[#a6afbd] rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent focus:bg-white/90 transition-all shadow-sm" />
+            <SearchIcon class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-500" />
           </div>
-          <button
-            @click="handleSearch"
-            class="px-4 py-2 bg-gray-900 hover:bg-black text-white rounded-full transition-colors"
-          >
+          <button @click="handleSearch"
+            class="px-4 py-2 bg-gray-900 hover:bg-black text-white rounded-full transition-colors">
             搜索
           </button>
         </div>
 
         <!-- 移动端菜单按钮 -->
-        <button
-          @click="toggleMobileMenu"
-          class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
-        >
+        <button @click="toggleMobileMenu" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
           <MenuIcon v-if="!mobileMenuOpen" class="w-6 h-6 text-gray-700" />
           <XIcon v-else class="w-6 h-6 text-gray-700" />
         </button>
@@ -65,46 +41,26 @@
 
       <!-- 移动端菜单 -->
       <Transition name="slide-up">
-        <div
-          v-if="mobileMenuOpen"
-          class="md:hidden py-4 border-t border-gray-200"
-        >
+        <div v-if="mobileMenuOpen" class="md:hidden py-4 border-t border-gray-200">
           <!-- 移动端Logo -->
-          <div
-            class="flex items-center justify-center px-4 pb-4 border-b border-gray-100"
-          >
-            <img
-              src="/apex.jpg"
-              alt="ApexBlog Logo"
-              class="w-8 h-8 rounded-full object-cover mr-2 shadow-sm"
-            />
-            <span class="text-lg font-bold text-gray-900">ApexBlog</span>
+          <div class="flex items-center justify-center px-4 pb-4 border-b border-gray-100">
+            <img src="https://images.waer.ltd/notes/202508151240669.jpg" alt="ApexBlog Logo"
+              class="w-8 h-8 rounded-full object-cover mr-2 shadow-sm" />
+            <span class="text-lg font-bold text-gray-900">八尺妖剑</span>
           </div>
 
           <div class="flex flex-col space-y-4 pt-4">
-            <RouterLink
-              v-for="item in navItems"
-              :key="item.path"
-              :to="item.path"
-              @click="closeMobileMenu"
-              class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
-            >
+            <RouterLink v-for="item in navItems" :key="item.path" :to="item.path" @click="closeMobileMenu"
+              class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
               {{ item.name }}
             </RouterLink>
 
             <!-- 移动端搜索 -->
             <div class="px-4">
               <div class="relative">
-                <input
-                  v-model="searchKeyword"
-                  @keyup.enter="handleSearch"
-                  type="text"
-                  placeholder="搜索文章..."
-                  class="w-full px-4 py-2 pl-10 bg-white/70 backdrop-blur-sm border-2 border-[#a6afbd] rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent focus:bg-white/90 transition-all shadow-sm"
-                />
-                <SearchIcon
-                  class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-500"
-                />
+                <input v-model="searchKeyword" @keyup.enter="handleSearch" type="text" placeholder="搜索文章..."
+                  class="w-full px-4 py-2 pl-10 bg-white/70 backdrop-blur-sm border-2 border-[#a6afbd] rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent focus:bg-white/90 transition-all shadow-sm" />
+                <SearchIcon class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-500" />
               </div>
             </div>
           </div>
