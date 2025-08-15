@@ -76,11 +76,11 @@ jwt:
 
 # 博客配置
 blog:
-  title: "八尺妖剑"
-  description: "个人技术博客"
-  author: "xuyi"
-  email: 你的邮箱@example.com
-  url: https://ilikexff.cn
+  title: "八尺妖剑 - 技术博客"
+  description: "个人技术博客，分享编程技术和开发经验"
+  author: "八尺妖剑"
+  email: ilikexff@gmail.com
+  url: https://www.ilikexff.cn
   rss:
     enabled: true
     max-items: 20
