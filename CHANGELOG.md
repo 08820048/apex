@@ -54,7 +54,7 @@
 - 🔍 全文搜索功能
 - 📱 响应式设计
 - 📄 RSS 订阅支持
-- 🌐 在线演示站点: https://www.ilikexff.cn/
+- 🌐 线上案例参考: https://www.ilikexff.cn/ (基于本项目部署)
 
 ### 技术栈
 
